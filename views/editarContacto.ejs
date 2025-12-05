@@ -1,0 +1,24 @@
+<%- include("templates/encabezado.ejs", { titulo: "Editar Contacto" }) %>
+
+<div class="row mt-4">
+  <div class="col-md-6 offset-md-3">
+    <form action="/editarContacto" method="POST">
+      <input type="hidden" name="id" value="<%= contactoBD._id %>">
+      
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input class="form-control" type="text" name="nombre" id="nombre" value="<%= contactoBD.nombre %>" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="edad" class="form-label">Edad</label>
+        <input class="form-control" type="number" name="edad" id="edad" value="<%= contactoBD.edad %>" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary w-100">Guardar Cambios</button>
+      <a href="/mostrarContactos" class="btn btn-secondary w-100 mt-2">Cancelar</a>
+    </form>
+  </div>
+</div>
+
+<%- include("templates/pie.ejs") %>

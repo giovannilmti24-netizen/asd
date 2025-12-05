@@ -1,0 +1,16 @@
+<%- include("templates/encabezado.ejs", { titulo: "Confirmación" }) %>
+
+<div class="row mt-4">
+  <div class="col-md-6 offset-md-3">
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">¡Éxito!</h4>
+      <p>Tu contacto ha sido registrado correctamente.</p>
+      <hr>
+      <p class="mb-0"><strong>Nombre:</strong> <%= nombre %><br><strong>Edad:</strong> <%= edad %></p>
+    </div>
+    <a href="/mostrarContactos" class="btn btn-primary w-100">Ver todos mis contactos</a>
+    <a href="/c" class="btn btn-secondary w-100 mt-2">Añadir otro contacto</a>
+  </div>
+</div>
+
+<%- include("templates/pie.ejs") %>

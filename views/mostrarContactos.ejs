@@ -1,0 +1,36 @@
+<%- include("templates/encabezado.ejs", { titulo: "Mis Contactos" }) %>
+
+<div class="row mt-4">
+  <div class="col-12">
+    <a href="/c" class="btn btn-success mb-3">+ Nuevo Contacto</a>
+    <% if (contactosBD.length === 0) { %>
+      <div class="alert alert-info">No hay contactos registrados</div>
+    <% } else { %>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% contactosBD.forEach(contacto=>{ %>
+            <tr>
+              <td><%= contacto.nombre %></td>
+              <td><%= contacto.edad %></td>
+              <td>
+                <a href="/editar/<%= contacto._id %>" class="btn btn-sm btn-warning">Editar</a>
+                <a href="/borrar/<%= contacto._id %>" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar contacto?')">Borrar</a>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include("templates/pie.ejs") %>
