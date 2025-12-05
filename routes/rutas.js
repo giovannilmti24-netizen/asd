@@ -2,7 +2,7 @@ import { Router } from "express";
 import { nuevoContacto, mostrarContactos, buscarPorId, editarContacto, borrarContacto, buscarContacto } from "../BD/contactoBD.js";
 const router = Router();
 
-var artistas = ["Bad Bunny", "Guns N Roses", "Arctic Monkeys", "Drake"];
+var artistas = ["Bad Bunny", "Maluma", "J Balvin", "Daddy Yankee", "Ozuna", "Anuel AA"];
 
 router.get("/", function (req, res) {
   res.render("home", { artistas });
